@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\pokemonController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +15,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('bienvenido', ['nombre'=>'juan']);
+    return view('welcome');
 });
+
+// Definición de la ruta 'materias'
+Route::any(
+    'bienvenido', // URL de la ruta, en este caso, '/bienvenido'
+    [pokemonController::class, 'index'] // Controlador y método a los que se dirige la solicitud en el controlador
+)->name('bienvenido'); // Nombre de la ruta, útil para referenciarla en otras partes de la aplicación
+

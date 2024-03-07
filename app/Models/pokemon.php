@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class pokemon extends Model
 {
+    
     use HasFactory;
     
     protected $table = 'pokemones';
