@@ -11,7 +11,7 @@
     <div class="flex flex-col h-screen justify-between">
         <header>
             <div class="w-full h-50 bg-blue-300 text-white justify-center text-center">
-                <a href="/"><H1>BIENVENIDO A TU POKEDEX</H1></a>
+                <a href="/pokecrud"><H1>BIENVENIDO A TU POKEDEX </H1></a>
             </div>
         </header>
 

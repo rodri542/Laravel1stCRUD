@@ -14,7 +14,6 @@ class pokemon extends Model
     protected $primaryKey = 'id_pokemon';
 
     protected $fillable = [
-        'id_pokemon',
         'nombre',
         'tipo',
         'region',

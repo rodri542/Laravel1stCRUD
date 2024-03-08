@@ -13,8 +13,6 @@ function index() {
     // Consulta a la base de datos para obtener todos los registros de la tabla 'pokemones'
     $pokemones = Pokemon::all();
 
-    // Log de la cantidad de registros obtenidos
-    \Log::info('Número de registros de pokemones: ' . $pokemones->count());
 
 
     // Devuelve la vista 'bienvenido' y pasa los datos de los pokemones utilizando una clave llamada 'buenas'
@@ -25,11 +23,28 @@ function index() {
         ]
     );
 
+}
+
+
+function store(Request $request) {
+        
+    $validated = $request->validate([
+        "nombre" => "required|max:120",
+        "tipo" => "required|max:18",
+        "region" => "required|max:18",
+        "descripcion" => "required|max:120",
+        "edad"=>"required|numeric",
+        "peso"=>"required|numeric"
+    ]);
+
+    $pokemon = pokemon::findOrNew($request->id);
+    $pokemon->fill($validated);
+    $pokemon->save();
+
+    return redirect()->route('bienvenido');
 
 
 
 }
-
-
     
 }

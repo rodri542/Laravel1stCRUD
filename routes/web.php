@@ -15,7 +15,7 @@ use App\Http\Controllers\pokemonController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('layouts/start');
 });
 
 // Definición de la ruta 'materias'
@@ -24,3 +24,9 @@ Route::any(
     [pokemonController::class, 'index'] // Controlador y método a los que se dirige la solicitud en el controlador
 )->name('bienvenido'); // Nombre de la ruta, útil para referenciarla en otras partes de la aplicación
 
+
+// Definición de la ruta 'materias'
+Route::post(
+    'bienvenido-store', // URL de la ruta, en este caso, '/bienvenido'
+    [pokemonController::class, 'store'] // Controlador y método a los que se dirige la solicitud en el controlador
+)->name('bienvenido.store'); // Nombre de la ruta, útil para referenciarla en otras partes de la aplicación
