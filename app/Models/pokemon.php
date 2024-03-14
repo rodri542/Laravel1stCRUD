@@ -19,6 +19,7 @@ class pokemon extends Model
         'region',
         'descripcion',
         'edad',
-        'peso'
+        'peso',
+        'id_entrenador'
     ];
 }

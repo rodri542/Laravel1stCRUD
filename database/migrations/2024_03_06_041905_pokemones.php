@@ -19,8 +19,9 @@ return new class extends Migration
             $table->string('descripcion');
             $table->integer('edad');
             $table->integer('peso');
+            $table->unsignedBigInteger('id_entrenador');
             $table->timestamps();
-
+            $table->foreign('id_entrenador')->references('id_entrenador')->on('entrenadors')->onDelete('cascade'); // Definimos la relación con la tabla de entrenadores
 
             //$table->foreign('id_tema')->references('id_tema')->on('temas');
         });
