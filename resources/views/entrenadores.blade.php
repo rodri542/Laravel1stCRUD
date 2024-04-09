@@ -108,7 +108,7 @@
                     <h4 class="text-lg">Editar Pokemon</h4>
                     <button class="closeModalButton text-black">&times;</button>
                 </div>
-                <form id="editForm" action="{{ route('entrenadores.edit',  $m->id_entrenador) }}" method="POST">
+                <form id="editForm"  method="POST">
                     @csrf 
                     <div class="mt-2">
                         <input type="hidden" id="editId" name="id">
